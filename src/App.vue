@@ -1,10 +1,9 @@
-<script setup></script>
+<script setup>
+import HeaderComponent from '@/components/HeaderComponent.vue'
+</script>
 
 <template>
-  <h1>Книги, которые вознесут вас на Олимп</h1>
-  <p class="main-text">
-    покупайте наши книги
-  </p>
+  <HeaderComponent />
 </template>
 
 <style scoped></style>
