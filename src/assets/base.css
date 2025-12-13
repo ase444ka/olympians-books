@@ -1,0 +1,41 @@
+@import './fonts';
+/* color palette */
+:root {
+  --white: #FFFFFF;
+  --black: #000000;
+  --blue: #1596C1;
+  --grey: #AAAAAA;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  color: var(--black);
+  background: var(--white);
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  line-height: 1.6;
+  font-family:
+    Raleway,
+    Arial,
+    sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a, a:hover, a:visited {
+  text-decoration: none;
+  color: inherit;
+}

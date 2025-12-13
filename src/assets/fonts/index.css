@@ -1,0 +1,22 @@
+@font-face {
+  font-family: Forum;
+  font-style: normal;
+  font-weight: regular;
+  src: local('Forum'), url('./Forum-Regular.ttf');
+}
+
+@font-face {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: regular;
+  src: local('Raleway'), url('./Raleway-Regular.ttf');
+}
+
+@font-face {
+  font-family: Archeologicaps;
+  font-style: normal;
+  font-weight: regular;
+  src: local('Archeologicaps'), url('./Archeologicaps 500.ttf');
+}
+
+
