@@ -1,6 +1,6 @@
 import './assets/main.scss';
 // Default theme
-import '@splidejs/vue-splide/css';
+// import '@splidejs/vue-splide/css';
 
 // or other themes
 // import '@splidejs/vue-splide/css/skyblue';
