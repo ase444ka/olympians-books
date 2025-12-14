@@ -77,9 +77,9 @@ const options = ref({
 })
 function changeSlidesCount() {
   const width = document.documentElement.offsetWidth
-  if (width > 1024) {
+  if (width > 1300) {
     options.value.perPage = 3
-  } else if (width > 768) {
+  } else if (width > 900) {
     options.value.perPage = 2
   } else {
     options.value.perPage = 1
@@ -131,6 +131,13 @@ function track(index) {
     }
     @media screen and (max-width: 400px) {
       margin-top: 17px;
+    }
+  }
+
+  .card {
+    margin: 0 10px;
+    @media screen and (max-width: 901px) {
+      margin: 0 auto;
     }
   }
 

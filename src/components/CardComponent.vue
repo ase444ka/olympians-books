@@ -18,14 +18,12 @@ const {src, title, genre, price} = defineProps(['src', 'title', 'genre', 'price'
 
 <style lang="scss">
 .card {
-  margin: 0 10px;
   max-width: 420px;
   height: 650px;
   padding: 22px 23px;
   border: 3px solid var(--black);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  place-items: center;
   gap: 20px;
   @media screen and (max-width: 768px) {
     max-width: 340px;
@@ -74,6 +72,7 @@ const {src, title, genre, price} = defineProps(['src', 'title', 'genre', 'price'
   }
   .footer {
     margin-top: 38px;
+    justify-self: flex-end;
     display: flex;
     justify-content: space-between;
     width: 100%;
