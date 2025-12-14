@@ -1,5 +1,6 @@
 <template>
   <header class="header">
+    <HeaderNavComponent />
     <div class="container">
       <div class="logo">olympians books</div>
       <h1>Книги, которые вознесут вас на Олимп</h1>
@@ -15,6 +16,7 @@
 </template>
 
 <script setup>
+import HeaderNavComponent from '@/components/HeaderNavComponent.vue'
 import IconCart from '@/icons/IconCart.vue'
 import IconExpand from '@/icons/IconExpand.vue'
 </script>
@@ -24,6 +26,7 @@ import IconExpand from '@/icons/IconExpand.vue'
   height: 940px;
   background-repeat: no-repeat;
   padding-top: 13px;
+  color: var(--white);
 
   @media screen and (max-width: 1024px) {
     padding-top: 0px;
@@ -53,9 +56,6 @@ import IconExpand from '@/icons/IconExpand.vue'
     }
   }
 
-  * {
-    color: var(--white);
-  }
   .logo {
     font-family: Archeologicaps;
     font-size: 24px;

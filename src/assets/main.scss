@@ -68,6 +68,7 @@ button {
   padding: 8px 42px;
   background-color: transparent;
   letter-spacing: 3px;
+  color: inherit;
   @media screen and (max-width: 768px) {
     font-size: 24px;
     padding: 10px 4px;
@@ -93,13 +94,13 @@ button {
     }
   }
   &.icon {
-    color: var(--white);
+    color: inherit;
     background-color: transparent;
     border: none;
     padding: 0;
     &:hover,
     &:active {
-      color: var(--white);
+      color: inherit;
       background-color: transparent;
     }
     @media screen and (max-width: 1024px) {
