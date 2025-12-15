@@ -4,9 +4,15 @@
       <div class="wrapper">
         <h3>Хотите знать о книгах все?</h3>
         <p>Подпишитесь на нашу новостную рассылку</p>
-        <form @submit.prevent="send">
-          <input type="text" />
-          <button type="submit">Отправить</button>
+        <form @submit.prevent="send" :disabled="!isValid">
+          <input
+            type="text"
+            v-model="email"
+            @blur="isDirty = true"
+            @focus="isDirty = false"
+            :class="hasError ? 'error' : ''"
+          />
+          <button type="submit" :disabled="!isValid">Отправить</button>
         </form>
       </div>
     </div>
@@ -14,8 +20,21 @@
 </template>
 
 <script setup>
+import {ref, computed} from 'vue'
+const email = ref('')
+const isDirty = ref(false)
+const isValid = computed(() => {
+  return /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email.value)
+})
+
+const hasError = computed(() => isDirty.value && !isValid.value)
 function send() {
+  isDirty.value = false
+  email.value = ''
   console.log('sent')
+}
+function setDirty() {
+  isDirty.value = true
 }
 </script>
 
@@ -91,6 +110,10 @@ function send() {
       &:focus {
         outline: none;
         border-color: var(--blue);
+      }
+      &.error {
+        background-color: rgb(252, 207, 207);
+        border-color: rgb(100, 47, 47);
       }
       @media screen and (max-width: 1024px) {
         height: 50px;
