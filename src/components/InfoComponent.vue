@@ -71,6 +71,7 @@
       }
       @media screen and (max-width: 1350px) {
         padding: 40px 80px;
+        justify-content: center;
       }
       @media screen and (max-width: 768px) {
         padding: 25px 48px;
