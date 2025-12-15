@@ -33,12 +33,12 @@ footer {
       padding: 26px 0 30px;
     }
     @media screen and (max-width: 660px) {
-display: grid;
-grid-template-columns: 1fr 1fr;
-grid-template-areas:
-                'logo  nav'
-                'phone nav';
-}
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        'logo  nav'
+        'phone nav';
+    }
   }
   .logo {
     font-family: Archeologicaps;
@@ -58,8 +58,8 @@ grid-template-areas:
   .phone {
     grid-area: phone;
     @media screen and (max-width: 660px) {
-text-align: start;
-}
+      text-align: start;
+    }
   }
   nav {
     display: flex;
@@ -67,8 +67,8 @@ text-align: start;
     justify-content: space-between;
     grid-area: nav;
     @media screen and (max-width: 660px) {
-flex-direction: column;
-}
+      flex-direction: column;
+    }
   }
 
   a {
