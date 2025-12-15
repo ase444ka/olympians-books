@@ -30,15 +30,13 @@ const isValid = computed(() => {
   return /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email.value)
 })
 
-const hasError = computed(() => isDirty.value && !isValid.value)
+const hasError = computed(() => isDirty.value && !isValid.value && email.value.length)
 function send() {
   isDirty.value = false
   email.value = ''
   console.log('sent')
 }
-function setDirty() {
-  isDirty.value = true
-}
+
 watch(hasError, value => {
   if (value) {
     nextTick (() =>input.value.classList.add('animate__shakeX') )
