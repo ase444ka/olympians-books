@@ -43,10 +43,16 @@ function processClick(e) {
     padding-top: 0px;
     height: 783px;
   }
+  @media screen and (max-width: 820px) {
+    height: 730px;
+  }
   @media screen and (max-width: 400px) {
     padding-top: 7px;
     height: 590px;
   }
+  @media screen and (max-width: 350px) {
+      height: 540px;
+    }
   .container {
     background-image: url('/images/apollo.png');
     background-size: contain;
@@ -63,7 +69,11 @@ function processClick(e) {
     }
     @media screen and (max-width: 400px) {
       background-size: 260% auto;
-      background-position: -286px 18px;
+      background-position: -373px 18px;
+    }
+    @media screen and (max-width: 370px) {
+      background-size: 254% auto;
+    background-position: -254px 47px;
     }
   }
 
@@ -90,15 +100,23 @@ function processClick(e) {
     width: 60%;
     line-height: 1.5;
     letter-spacing: 6px;
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 1060px) {
+      width: 50%;
       font-size: 64px;
-      width: 90%;
       letter-spacing: 5px;
-      margin-top: 28px;
+      margin-top: 73px;
     }
-    @media screen and (max-width: 710px) {
-      width: 75%;
+    @media screen and (max-width: 1024px) {
+      width: 70%;
+      font-size: 54px;
+      letter-spacing: 5px;
+      margin-top: 73px;
     }
+    @media screen and (max-width: 768px) {
+      width: 67%;
+      margin-top: 0;
+    }
+
     @media screen and (max-width: 400px) {
       font-size: 40px;
       letter-spacing: 3px;
@@ -108,11 +126,18 @@ function processClick(e) {
 
   .header-button {
     margin-top: 71px;
-    @media screen and (max-width: 806px) {
-      margin-top: 0;
+    @media screen and (max-width: 1060px) {
+      margin-top: 50px;
+    }
+
+    @media screen and (max-width: 1024px) {
+      margin-top: 139px;
+    }
+    @media screen and (max-width: 850px) {
+      margin-top: 90px;
     }
     @media screen and (max-width: 768px) {
-      margin-top: 28px;
+      margin-top: 40px;
     }
     @media screen and (max-width: 700px) {
       margin-top: 0;
