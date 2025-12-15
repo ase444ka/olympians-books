@@ -50,6 +50,19 @@ onBeforeUnmount(() => {
   font-family: Forum;
   font-size: 34px;
   align-items: center;
+  @media screen and (max-width: 768px) {
+    left: calc(50% - 168px);
+    width: 336px;
+    gap: 26px;
+    padding: 0px 0 72px 0;
+  }
+  @media screen and (max-width: 400px) {
+    left: 0;
+    width: 100vw;
+    gap: 25px;
+    padding: 0 0 76px 0;
+    font-size: 25px;
+  }
 
   a {
     color: var(--black);
@@ -57,13 +70,18 @@ onBeforeUnmount(() => {
     &:first-child {
       margin-top: 5px;
     }
-    &:hover, &:active {
+    &:hover,
+    &:active {
       color: var(--grey);
+    }
+    @media screen and (max-width: 768px) {
+      font-size: 26px;
     }
   }
   button.icon {
     color: var(--black);
-    &:hover, &:active {
+    &:hover,
+    &:active {
       color: var(--grey);
     }
 
@@ -72,6 +90,9 @@ onBeforeUnmount(() => {
       transition: transform 100ms ease;
       &.rotate {
         transform: rotate(0deg);
+      }
+      @media screen and (max-width: 400px) {
+        transform: scale(0.5);
       }
     }
   }
