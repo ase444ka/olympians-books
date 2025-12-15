@@ -84,10 +84,10 @@ function send() {
       height: 60px;
       flex-grow: 1;
       border: 3px solid var(--black);
-      font-size: 40px;
-      font-family: Forum;
+      font-size: 35px;
+      font-family: Raleway;
+      padding: 0 12px 7px 12px;
       font-style: italic;
-      padding-left: 40px;
       &:focus {
         outline: none;
         border-color: var(--blue);
@@ -96,6 +96,8 @@ function send() {
         height: 50px;
         flex-grow: 0;
         width: 248px;
+        font-size: 20px;
+        padding: 5px;
       }
       @media screen and (max-width: 610px) {
         width: 91vw;
@@ -112,6 +114,7 @@ function send() {
       @media screen and (max-width: 1024px) {
         height: 50px;
         font-size: 24px;
+        line-height: 45px;
         padding: 0 7px;
       }
       @media screen and (max-width: 610px) {
