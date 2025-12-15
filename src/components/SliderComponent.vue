@@ -66,6 +66,27 @@ const slides = [
     genre: 'Эпос и фольклор',
     price: '155',
   },
+  {
+    id: 4,
+    src: '/images/books/1.png',
+    title: 'Ж. Верн, “Двадцать тысяч лье под водой”',
+    genre: 'Приключения',
+    price: '168',
+  },
+  {
+    id: 5,
+    src: '/images/books/2.png',
+    title: 'Н. Кун, “Легенды и мифы Древней Греции”',
+    genre: 'Эпос и фольклор',
+    price: '174',
+  },
+  {
+    id: 6,
+    src: '/images/books/3.png',
+    title: 'Гомер, “Илиада”',
+    genre: 'Эпос и фольклор',
+    price: '155',
+  },
 ]
 
 const current = ref(0)
