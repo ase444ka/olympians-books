@@ -1,4 +1,5 @@
 import './assets/main.scss';
+import 'animate.css';
 // Default theme
 // import '@splidejs/vue-splide/css';
 

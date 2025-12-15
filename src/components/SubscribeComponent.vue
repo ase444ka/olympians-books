@@ -6,6 +6,8 @@
         <p>Подпишитесь на нашу новостную рассылку</p>
         <form @submit.prevent="send" :disabled="!isValid">
           <input
+            class="animate__animated"
+            ref="input"
             type="text"
             v-model="email"
             @blur="isDirty = true"
@@ -20,9 +22,10 @@
 </template>
 
 <script setup>
-import {ref, computed} from 'vue'
+import {ref, computed, watch, useTemplateRef, nextTick } from 'vue'
 const email = ref('')
 const isDirty = ref(false)
+const input = useTemplateRef('input')
 const isValid = computed(() => {
   return /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email.value)
 })
@@ -36,6 +39,11 @@ function send() {
 function setDirty() {
   isDirty.value = true
 }
+watch(hasError, value => {
+  if (value) {
+    nextTick (() =>input.value.classList.add('animate__shakeX') )
+  }
+})
 </script>
 
 <style lang="scss">
@@ -112,8 +120,7 @@ function setDirty() {
         border-color: var(--blue);
       }
       &.error {
-        background-color: rgb(252, 207, 207);
-        border-color: rgb(100, 47, 47);
+        border-color: rgb(247, 88, 88);
       }
       @media screen and (max-width: 1024px) {
         height: 50px;
