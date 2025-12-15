@@ -69,6 +69,7 @@ button {
   background-color: transparent;
   letter-spacing: 3px;
   color: inherit;
+  cursor: pointer;
   @media screen and (max-width: 768px) {
     font-size: 24px;
     padding: 10px 4px;
@@ -79,12 +80,16 @@ button {
   }
 
   &:hover {
+    outline: none;
     background-color: #cdcdcd;
   }
   &:active {
     outline: none;
     color: var(--black);
     background: var(--white);
+  }
+  &:focus-visible {
+    outline: none;
   }
   &[disabled] {
     color: var(--grey);
@@ -100,7 +105,8 @@ button {
     padding: 0;
     &:hover,
     &:active {
-      color: inherit;
+      outline: none;
+      color: var(--grey);
       background-color: transparent;
     }
     @media screen and (max-width: 1024px) {

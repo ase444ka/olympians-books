@@ -1,12 +1,14 @@
 <template>
-  <header class="header">
-    <HeaderNavComponent />
+  <header class="header" @keyup.esc="showMenu = false" @click="processClick">
+    <Transition>
+      <HeaderNavComponent v-if="showMenu" @close="showMenu = false" />
+    </Transition>
     <div class="container">
       <div class="logo">olympians books</div>
       <h1>Книги, которые вознесут вас на Олимп</h1>
       <button class="header-button">узнать больше</button>
-      <button class="icon expand">
-        <IconExpand />
+      <button class="icon expand" @click="showMenu = true">
+        <IconExpand :class="showMenu ? 'rotate' : ''" />
       </button>
       <button class="icon cart">
         <IconCart />
@@ -19,6 +21,15 @@
 import HeaderNavComponent from '@/components/HeaderNavComponent.vue'
 import IconCart from '@/icons/IconCart.vue'
 import IconExpand from '@/icons/IconExpand.vue'
+import {ref} from 'vue'
+
+const showMenu = ref(false)
+
+function processClick(e) {
+  if (!e.target.closest('.header-nav') && !e.target.closest('.expand')) {
+    showMenu.value = false
+  }
+}
 </script>
 <style lang="scss">
 .header {
@@ -114,6 +125,12 @@ import IconExpand from '@/icons/IconExpand.vue'
     position: absolute;
     top: 9px;
     left: calc(50% - 32px);
+    svg {
+      transition: transform 100ms ease;
+      &.rotate {
+        transform: rotate(180deg);
+      }
+    }
     @media screen and (max-width: 1024px) {
       top: 14px;
     }
@@ -132,6 +149,26 @@ import IconExpand from '@/icons/IconExpand.vue'
     @media screen and (max-width: 400px) {
       top: -15px;
       right: 8px;
+    }
+  }
+
+  .v-enter-active {
+    animation: go-out 1s reverse;
+  }
+
+  .v-leave-active {
+    animation: go-out 1s;
+  }
+
+  @keyframes go-out {
+    0% {
+      transform: translateY(0);
+    }
+    20% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-800px);
     }
   }
 }

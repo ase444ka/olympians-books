@@ -1,6 +1,6 @@
 <template>
   <nav class="header-nav">
-    <button class="icon"><IconExpand /></button>
+    <button class="icon" @click="hide"><IconExpand :class="rotate ? 'rotate' : ''" /></button>
     <a>Главная</a>
     <a>Каталог</a>
     <a>Корзина</a>
@@ -8,8 +8,29 @@
 </template>
 
 <script setup>
+import {ref, onBeforeUnmount} from 'vue'
 import IconExpand from '@/icons/IconExpand.vue'
+const emit = defineEmits(['close'])
 
+const rotate = ref(false)
+
+function hide() {
+  console.log('hide')
+  rotate.value = true
+  setTimeout(() => {
+    emit('close')
+  }, 50)
+  setTimeout(() => {
+    rotate.value = false
+  }, 2000)
+}
+
+onBeforeUnmount(() => {
+  rotate.value = true
+  setTimeout(() => {
+    rotate.value = false
+  }, 2000)
+})
 </script>
 
 <style lang="scss">
@@ -29,15 +50,30 @@ import IconExpand from '@/icons/IconExpand.vue'
   font-family: Forum;
   font-size: 34px;
   align-items: center;
+
   a {
     color: var(--black);
+    cursor: pointer;
     &:first-child {
       margin-top: 5px;
     }
+    &:hover, &:active {
+      color: var(--grey);
+    }
   }
-  button.icon svg {
-    color: var(--black) !important;
-    transform: rotate(180deg);
+  button.icon {
+    color: var(--black);
+    &:hover, &:active {
+      color: var(--grey);
+    }
+
+    svg {
+      transform: rotate(180deg);
+      transition: transform 100ms ease;
+      &.rotate {
+        transform: rotate(0deg);
+      }
+    }
   }
 }
 </style>
